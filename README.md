@@ -14,9 +14,20 @@ This method uses legacy website of Ryanair because the new website doesn't see w
 * PIL / Pillow
 
 # Usage
-Each time the script finish two images will be stored. First is __seats_page.png__ that contains a full screenshot and __seats_(date).png__ with only aircraft with seats.
 
-    from check_seats import Ryanair  
-    # Ryanair('confirmation number', 'mail@gmail.com', 'origin airport', 'destination airport')  
-    Ryanair('123ABC', 'Mail@gmail.com', 'BRU', 'SXF')
+```
+usage: check_seats.py [-h] -r RESERVATION -e EMAIL [-t POLL_INTERVAL]
 
+optional arguments:
+  -h, --help            show this help message and exit
+  -r RESERVATION, --reservation RESERVATION
+                        Flight reservation number
+  -e EMAIL, --email EMAIL
+                        Email address used for reservation
+  -t POLL_INTERVAL, --poll-interval POLL_INTERVAL
+                        Time in seconds between checks
+```
+
+Each time the script a few images will be stored. First is __seats_page.png__ that contains a full screenshot and __seats_(date).png__ with only aircraft with seats. Besides those, a few more debugging images are saved (`checked/filled/homepage/manage_page/seat_map.png`).
+
+`python check_seats.py -r RESERVATION_ID -e EMAIL_USED_FOR_RESERVATION`
